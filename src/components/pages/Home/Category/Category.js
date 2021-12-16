@@ -7,20 +7,26 @@ import img3 from "./img/img-4.png";
 
 const Category = () => {
     return (
-        <div className="my-5">
+        <div className="my-5 py-5">
             <Container>
                 <Row className="d-flex justify-content-center">
                     <div style={{ backgroundImage: `url(${img1})` }} className=" banner-images1 col-sm-12 col-md-6 mt-2">
-                       <p>TRY IT TODAY</p>
-                       <p>MOST POPULAR BURGER</p>
+                        <div className="mt-2">
+                            <p className="text-white">TRY IT TODAY</p>
+                            <p className="fs-4 fw-bold text-white w-50">MOST POPULAR BURGER</p>
+                        </div>
                     </div>
                     <div className="col-md-6">
                         <div className="row">
                             <div style={{ backgroundImage: `url(${img2})` }} className=" banner-images col-12 mx-2 mt-2">
-                                
+                            <div className="mt-2">
+                                    <p className="fs-5 text-white w-25 fw-bold"><span style={{ fontSize: "11px" }} className="fw-light">TRT IT TODAY</span> More fun more taste</p>
+                                </div>
                             </div>
                             <div style={{ backgroundImage: `url(${img3})` }} className=" banner-images col-12 mx-2 mt-2">
-                               <h3 className="text-white">hello</h3>
+                                <div className="mt-2">
+                                    <p className="fs-5 text-white w-25 fw-bold"><span style={{ fontSize: "11px" }} className="fw-light">TRT IT TODAY</span> Fresh & Chili</p>
+                                </div>
                             </div>
                         </div>
                     </div>
