@@ -1,0 +1,9 @@
+.banner{
+    background-color: #FFC045;
+}
+.banner-heading{
+    font-size: 63px;
+}
+.dashed-border{
+    border: 2px dashed #3D3D3D;
+}

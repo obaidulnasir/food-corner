@@ -11,9 +11,11 @@ body {
 
 h1, h2, h3, h4, h6, h5{
   font-family: 'Alfa Slab One', cursive;
+  color: #3D2514;
 }
 p{
   font-family: 'Montserrat', sans-serif;
+  color: #3D3D3D;
 }
 
 
