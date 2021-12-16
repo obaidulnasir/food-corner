@@ -1,0 +1,11 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Montserrat:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+
+font-family: 'Alfa Slab One', cursive;
+font-family: 'Montserrat', sans-serif;
+
+button-color: #BF2222;
+heading-color: #3D2514;
+heading-background: #FFC045;
+text-color: #3D3D3D
