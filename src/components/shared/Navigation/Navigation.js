@@ -4,7 +4,7 @@ import "./Navigation.css"
 
 const Navigation = () => {
     return (
-        <Navbar sticky className="navigation" collapseOnSelect expand="lg" >
+        <Navbar sticky="top" className="navigation" collapseOnSelect expand="lg" >
             <Container>
                 <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
