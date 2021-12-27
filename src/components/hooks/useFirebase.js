@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import {
   getAuth,
-  signInWithPopup,
   GoogleAuthProvider,
   onAuthStateChanged,
   signOut,
+  signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
@@ -48,6 +48,7 @@ const useFirebase = () => {
     setIsLoading(true);
     signOut(auth)
       .then(() => {
+        alert("Logout Success!!🍷🍷")
         setUser({});
       })
       .catch((error) => {

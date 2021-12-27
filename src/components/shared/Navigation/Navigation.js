@@ -1,9 +1,11 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../hooks/useFirebase';
 import "./Navigation.css"
 
 const Navigation = () => {
+    const { user, handleLogout } = useFirebase();
     return (
         <Navbar sticky="top" className="navigation" collapseOnSelect expand="lg" >
             <Container>
@@ -16,14 +18,30 @@ const Navigation = () => {
                     </Nav>
                     <Nav>
                         <Nav.Link>
-                            <button className="btn btn-danger">
-                                <i class="bi bi-basket fs-6"></i>
+                            {/* <Link to="/login">
+                                <button className="btn btn-danger">
+                                    <i class="bi bi-person-circle"></i>
+                                </button>
+                            </Link> */}
+                            <button className="btn btn-danger mx-1">
+                                <i class="bi bi-basket"></i>
                             </button>
+                            {
+                                user.email ? <button onClick={handleLogout} className="btn btn-danger">
+                                    Logout
+                                    <i class="bi bi-box-arrow-right"></i></button> :
+                                    <Link to="/login">
+                                        <button className="btn btn-light">Login
+                                            <i class="bi bi-box-arrow-left"></i>
+                                        </button>
+                                    </Link>
+                            }
                         </Nav.Link>
+
                         <Nav.Link>
-                            
+
                         </Nav.Link>
-                        
+
                         {/* <Nav.Link eventKey={2} href="#memes">
                        
                         </Nav.Link> */}

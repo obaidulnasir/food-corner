@@ -60,7 +60,7 @@ const Shop = () => {
                                     </Card>
                                 </Col>
                             ))
-                        };
+                        }
                     </Row>
                 </Container>
             </div>

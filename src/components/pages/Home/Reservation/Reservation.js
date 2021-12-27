@@ -47,6 +47,9 @@ const Reservation = () => {
                         </form>
                     </div>
                 </Container>
+                {/* <div>
+                    <button onClick={signInWithGoogle}> with google</button>
+                </div> */}
             </div>
         </div>
     );
