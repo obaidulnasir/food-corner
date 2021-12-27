@@ -1,6 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Admin from './components/pages/Admin/Admin';
+import Cart from './components/pages/Cart/Cart';
 import Home from './components/pages/Home/Home';
 import Login from './components/pages/Login/Login';
 import Shop from './components/pages/Shop/Shop';
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path="/login">
             <Login></Login>
+        </Route>
+        <Route path="/cart">
+            <Cart></Cart>
         </Route>
         <Route exact path="/">
           <Home></Home>

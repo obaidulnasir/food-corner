@@ -6,7 +6,7 @@ import {
   signOut,
   signInWithPopup,
   signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
+  // createUserWithEmailAndPassword,
 } from "firebase/auth";
 import initializeAuthentication from "../Firebase/firebase.init";
 
@@ -17,7 +17,7 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   // is admin 
-  const [admin, isAdmin]= useState(false);
+  // const [admin, isAdmin]= useState(false);
   const [isLoading, setIsLoading]= useState(true);
 
   const auth = getAuth();
@@ -58,22 +58,22 @@ const useFirebase = () => {
   };
 
   //   user registration
-  const handleUserRegister = (email, password, name, location, history) => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((result) => {
-        setUser(result.user);
-        alert(`Welcome  ${name}, your registration success.`)
-        handleRegisterUserInfo(email, name);
-        const destination = location.state.from||'/';
-        history.replace(destination);
-        handleRegisterUserInfo(email, name);
-        console.log(name);
-      })
-      .catch((error) => {
-        setError(error.message)
-        // alert(error);
-      });
-  };
+  // const handleUserRegister = (email, password, name, location, history) => {
+  //   createUserWithEmailAndPassword(auth, email, password)
+  //     .then((result) => {
+  //       setUser(result.user);
+  //       alert(`Welcome  ${name}, your registration success.`)
+  //       handleRegisterUserInfo(email, name);
+  //       const destination = location.state.from||'/';
+  //       history.replace(destination);
+  //       handleRegisterUserInfo(email, name);
+  //       console.log(name);
+  //     })
+  //     .catch((error) => {
+  //       setError(error.message)
+  //       // alert(error);
+  //     });
+  // };
 
   //   user email password login
   const handleUserLogin = (email, password, location, history) => {
@@ -108,35 +108,36 @@ const useFirebase = () => {
  /*  ================================
   Collect User Email
   ================================ */
-  const handleRegisterUserInfo= (email,name)=>{
-    console.log(email)
-    fetch("https://polar-gorge-22890.herokuapp.com/addCustomer", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email, name }),
-    })
-    .then((res) => res.json())
-    .then((result) => console.log(result));
-  };
+  // const handleRegisterUserInfo= (email,name)=>{
+  //   console.log(email)
+  //   fetch("https://polar-gorge-22890.herokuapp.com/addCustomer", {
+  //     method: "POST",
+  //     headers: { "content-type": "application/json" },
+  //     body: JSON.stringify({ email, name }),
+  //   })
+  //   .then((res) => res.json())
+  //   .then((result) => console.log(result));
+  // };
 /* ==============================
  admin Check
   ============================= */
 
-  useEffect(()=>{
-    fetch(`https://polar-gorge-22890.herokuapp.com/customer/${user?.email}`)
-    .then(res=> res.json())
-    .then(data => isAdmin(data.admin))
-  },[user.email])
+  // useEffect(()=>{
+  //   fetch(`https://polar-gorge-22890.herokuapp.com/customer/${user?.email}`)
+  //   .then(res=> res.json())
+  //   .then(data => isAdmin(data.admin))
+  // },[user.email]);
+
 
   return {
     isLoading,
-    admin,
+    // admin,
     user,
     error,
     signInWithGoogle,
     handleLogout,
     handleUserLogin,
-    handleUserRegister,
+    // handleUserRegister,
   };
 };
 

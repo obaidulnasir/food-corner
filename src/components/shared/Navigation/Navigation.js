@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
@@ -6,6 +6,12 @@ import "./Navigation.css"
 
 const Navigation = () => {
     const { user, handleLogout } = useFirebase();
+    const [userCart, setUserCart] = useState([]);
+    useEffect(()=>{
+        fetch(`http://localhost:5000/cart/${user?.email}`)
+        .then(res => res.json())
+        .then(data => setUserCart(data));
+      },[user?.email]);
     return (
         <Navbar sticky="top" className="navigation" collapseOnSelect expand="lg" >
             <Container>
@@ -23,9 +29,14 @@ const Navigation = () => {
                                     <i class="bi bi-person-circle"></i>
                                 </button>
                             </Link> */}
+                            <Link to="/cart">
                             <button className="btn btn-danger mx-1">
                                 <i class="bi bi-basket"></i>
+                                {
+                                userCart?.length? <sup className="bg-warning fw-bold fs-4"> {userCart?.length} </sup> : <span> </span>
+                                }
                             </button>
+                            </Link>
                             {
                                 user.email ? <button onClick={handleLogout} className="btn btn-danger">
                                     Logout
