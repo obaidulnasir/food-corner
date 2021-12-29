@@ -9,12 +9,15 @@ import Profile from './components/pages/Profile/Profile';
 import Shop from './components/pages/Shop/Shop';
 import SingleProduct from './components/pages/SingleProduct/SingleProduct';
 import Footer from './components/shared/Footer/Footer';
+import Navigation from './components/shared/Navigation/Navigation';
 
 function App() {
   return (
     <div className="">
      <AuthProvider>
+     
      <BrowserRouter>
+     <Navigation></Navigation>
       <Switch>
         <Route path="/home">
             <Home></Home>

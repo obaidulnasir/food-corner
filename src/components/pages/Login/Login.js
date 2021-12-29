@@ -1,8 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import Navigation from '../../shared/Navigation/Navigation';
 import { useHistory, useLocation } from 'react-router';
-import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 
 
@@ -12,7 +10,6 @@ const Login = () => {
   const history = useHistory();
     return (
         <div>
-            <Navigation></Navigation>
             <Container className="my-5">
                 <Row>
                     <Col className="text-center">
@@ -20,6 +17,7 @@ const Login = () => {
                             <i class="bi bi-google-circle"></i>
                             Login with Google
                         </button>
+                        <br /><br /><br /><br /><br /><br />
                     </Col>
                 </Row>
             </Container>

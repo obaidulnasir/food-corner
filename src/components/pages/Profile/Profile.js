@@ -2,7 +2,6 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link, Switch, Route, useRouteMatch } from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
-import Navigation from '../../shared/Navigation/Navigation';
 import Address from './Address/Address';
 import MyOrder from './MyOrder/MyOrder';
 
@@ -12,7 +11,6 @@ const Profile = () => {
 
     return (
         <div>
-            <Navigation></Navigation>
             <Container className="my-5">
                 <Row>
                     <Col className="text-center">

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import Navigation from '../../shared/Navigation/Navigation';
 import "./Shop.css"
 import cardBg1 from "./img/collection-1.104f02d0.jpg";
 import cardBg2 from "./img/shop-1.jpg";
@@ -17,7 +16,6 @@ const Shop = () => {
     }, [])
     return (
         <div>
-            <Navigation></Navigation>
             <div>
                 <div><p>Total Product: {product.length}</p></div>
                 <Container>

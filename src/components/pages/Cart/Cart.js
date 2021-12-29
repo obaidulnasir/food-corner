@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Table } from 'react-bootstrap';
 import useFirebase from '../../hooks/useFirebase';
-import Navigation from '../../shared/Navigation/Navigation';
 
 const Cart = () => {
     const { user } = useFirebase();
@@ -15,7 +14,6 @@ const Cart = () => {
     console.log(userCart);
     return (
         <div>
-            <Navigation></Navigation>
             <Container>
                 <Row>
                     <div className="col-md-8">
