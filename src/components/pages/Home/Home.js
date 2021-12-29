@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../../shared/Footer/Footer';
 import Navigation from '../../shared/Navigation/Navigation';
 import Banner from './Banner/Banner';
 import Category from './Category/Category';
@@ -16,7 +15,7 @@ const Home = () => {
             <ProductSection></ProductSection>
             <EventSection></EventSection>
             <Reservation></Reservation>
-            <Footer></Footer>
+            
         </div>
     );
 };

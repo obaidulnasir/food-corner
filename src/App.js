@@ -8,6 +8,7 @@ import Login from './components/pages/Login/Login';
 import Profile from './components/pages/Profile/Profile';
 import Shop from './components/pages/Shop/Shop';
 import SingleProduct from './components/pages/SingleProduct/SingleProduct';
+import Footer from './components/shared/Footer/Footer';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         </Route>
       </Switch>
      </BrowserRouter>
+     <Footer></Footer>
      </AuthProvider>
      
     </div>
