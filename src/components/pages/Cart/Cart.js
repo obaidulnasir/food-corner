@@ -6,6 +6,7 @@ import Navigation from '../../shared/Navigation/Navigation';
 const Cart = () => {
     const { user } = useFirebase();
     const [userCart, setUserCart] = useState([]);
+    // const [totalPrice, setTotalPrice] = useState("");
     useEffect(() => {
         fetch(`http://localhost:5000/cart/${user?.email}`)
             .then(res => res.json())
@@ -25,31 +26,39 @@ const Cart = () => {
                                         <th>#</th>
                                         <th>Image</th>
                                         <th>Title</th>
-                                        <th>Added Date</th>
+                                        {/* <th>Added Date</th> */}
                                         <th>Price</th>
                                     </tr>
                                 </thead>
-                                {userCart?.map((mo, index) => (
-                                    <tbody>
+                                <tbody>
+                                    {userCart?.map((pr, index, price) => (
+                                        
                                         <tr>
                                             <td>{index + 1}</td>
-                                            <td><img src={mo.product.imgLink} alt="img" width="20%" /></td>
-                                            <td>{mo?.product.title}</td>
-                                            <td>{mo?.product.date}</td>
-                                            <td>{mo?.product.price}</td>
-                                            <td>{mo?.product.price}</td>
+                                            <td><img src={pr.product.imgLink} alt="img" width="20%" /></td>
+                                            <td>{pr?.product.title}</td>
                                             
+                                            <td>{pr?.product.price}</td>
+
                                             {/* <button
-                                                onClick={() => {
-                                                    handleDelete(mo._id);
-                                                }}
-                                                className="btn bg-danger p-2"
-                                            >
-                                                Delete
-                                            </button> */}
+                                            onClick={() => {
+                                                handleDelete(mo._id);
+                                            }}
+                                            className="btn bg-danger p-2"
+                                        >
+                                            Delete
+                                        </button> */}
                                         </tr>
-                                    </tbody>
-                                ))}
+                                    ))}
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td><strong>Total Price </strong> </td>
+                                        <td></td>
+                                        <td  colSpan={2}> </td>
+                                    </tr>
+                                </tbody>
+
                             </Table>
                         </div>
                     </div>

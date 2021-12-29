@@ -26,16 +26,16 @@ const useFirebase = () => {
 
   //   google login
   const signInWithGoogle = (location, history) => {
- 
     setIsLoading(true);
     signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
         setUser(user);
+        console.log(user)
         // handleRegisterUserInfo(user?.email, user?.displayName)
-        const destination = location?.state?.from||'/';
-          history.replace(destination);
-        console.log(result.user);
+        // const destination = location?.state?.from||'/';
+        //   history.replace(destination);
+       
       })
       .catch((error) => {
         setError(error.message);

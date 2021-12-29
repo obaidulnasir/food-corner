@@ -7,11 +7,11 @@ import "./Navigation.css"
 const Navigation = () => {
     const { user, handleLogout } = useFirebase();
     const [userCart, setUserCart] = useState([]);
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`http://localhost:5000/cart/${user?.email}`)
-        .then(res => res.json())
-        .then(data => setUserCart(data));
-      },[user?.email]);
+            .then(res => res.json())
+            .then(data => setUserCart(data));
+    }, [user?.email]);
     return (
         <Navbar sticky="top" className="navigation" collapseOnSelect expand="lg" >
             <Container>
@@ -30,17 +30,25 @@ const Navigation = () => {
                                 </button>
                             </Link> */}
                             <Link to="/cart">
-                            <button className="btn btn-danger mx-1">
-                                <i class="bi bi-basket"></i>
-                                {
-                                userCart?.length? <sup className="bg-warning fw-bold fs-4"> {userCart?.length} </sup> : <span> </span>
-                                }
-                            </button>
+                                <button className="btn btn-danger mx-1">
+                                    <i class="bi bi-basket"></i>
+                                    {
+                                        userCart.length ? <sup className="bg-warning fw-bold fs-4"> {userCart?.length} </sup> : <span> </span>
+                                    }
+                                </button>
                             </Link>
                             {
-                                user.email ? <button onClick={handleLogout} className="btn btn-danger">
-                                    Logout
-                                    <i class="bi bi-box-arrow-right"></i></button> :
+                                user.email ?
+                                    <span>
+                                        <Link to="/profile">
+                                            <button className="btn btn-danger">
+                                                <i class="bi bi-person"></i>
+                                            </button>
+                                        </Link>
+                                        <button onClick={handleLogout} className="btn btn-danger mx-1">
+                                            Logout
+                                            <i class="bi bi-box-arrow-right"></i></button>
+                                    </span> :
                                     <Link to="/login">
                                         <button className="btn btn-light">Login
                                             <i class="bi bi-box-arrow-left"></i>
